@@ -21,9 +21,20 @@ class NewsApiTests: XCTestCase {
         super.tearDown()
     }
     
+    // isInternetControl
     func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+        let sourcesTableViewController = SourcesTableViewController()
+        
+        XCTAssertEqual(sourcesTableViewController.isNetworkConnectivityAvailable(), true)
+
+    }
+    
+    // service call
+    func testExample1() {
+        API.makeCall("/v2/sources?"){ (result) in
+            print(result)
+        }
+        
     }
     
     func testPerformanceExample() {

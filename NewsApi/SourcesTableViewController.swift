@@ -47,7 +47,8 @@ class SourcesTableViewController: UIViewController, UITableViewDelegate, UITable
         cell.categoryLabel?.text = self.sourceFullDict!["sources"][indexPath.row]["category"].string
         cell.languageLabel?.text = self.sourceFullDict!["sources"][indexPath.row]["language"].string
         cell.countryLabel?.text = self.sourceFullDict!["sources"][indexPath.row]["country"].string
-        
+        cell.accessibilityIdentifier = "myCell_\(indexPath.row)"
+
         return cell
     }
     
